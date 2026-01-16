@@ -12,7 +12,7 @@ const HeroSection = () => {
         const tl = gsap.timeline();
 
         // 1. Initial States
-        gsap.set(textRef.current?.children || [], { autoAlpha: 0, y: 100, skewY: 10 });
+        gsap.set((textRef.current as any)?.children || [], { autoAlpha: 0, y: 100, skewY: 10 });
         gsap.set(imgWrapperRef.current, { autoAlpha: 0, scale: 1.2, x: 100 });
         gsap.set(bgTextRef.current, { autoAlpha: 0, scale: 0.8 });
 

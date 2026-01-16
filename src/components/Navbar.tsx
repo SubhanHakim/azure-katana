@@ -29,7 +29,7 @@ const Navbar = () => {
         { name: 'Vision', href: '#vision', id: '04' },
     ];
 
-    const menuVariants = {
+    const menuVariants: import("framer-motion").Variants = {
         closed: {
             x: "100%",
             transition: {
@@ -47,10 +47,10 @@ const Navbar = () => {
                 staggerChildren: 0.1,
                 delayChildren: 0.2
             }
-        } as const
+        }
     };
 
-    const linkVariants = {
+    const linkVariants: import("framer-motion").Variants = {
         closed: { x: 50, opacity: 0 },
         open: { x: 0, opacity: 1 }
     };
