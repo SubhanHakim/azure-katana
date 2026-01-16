@@ -36,7 +36,8 @@ const CommunitySection = () => {
 
                     <div className="flex flex-col md:flex-row justify-center gap-6 w-full px-6 md:px-0">
                         <motion.a
-                            href="#"
+                            href="https://x.com/i/communities/2012058032772170029"
+                            target="_blank"
                             whileHover={{ scale: 1.05, backgroundColor: "#dc2626", color: "#ffffff", borderColor: "#dc2626" }}
                             whileTap={{ scale: 0.95 }}
                             className="w-full md:w-auto px-8 py-4 md:px-12 md:py-6 bg-black/50 border-2 border-white text-white font-display font-black text-xl md:text-2xl uppercase tracking-widest transition-all skew-x-[-10deg] backdrop-blur-md hover:bg-black/70 flex justify-center items-center"

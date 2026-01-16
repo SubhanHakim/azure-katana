@@ -87,6 +87,7 @@ const Navbar = () => {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="px-6 py-2 border border-azure-accent text-azure-accent font-display font-bold hover:bg-azure-accent hover:text-white transition-colors duration-300 tracking-wider clip-path-slant"
+                            onClick={() => window.open('https://x.com/i/communities/2012058032772170029', '_blank')}
                         >
                             JOIN
                         </motion.button>

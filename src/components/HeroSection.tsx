@@ -122,10 +122,9 @@ const HeroSection = () => {
                     </p>
 
                     <div className="pt-4 flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
-                        <a href="#" className="group relative px-8 py-3 md:px-10 md:py-4 bg-azure-accent text-white font-display font-bold text-base md:text-lg tracking-widest overflow-hidden skew-x-[-10deg] hover:bg-red-700 transition-colors shadow-[0_0_20px_rgba(220,38,38,0.4)] w-full sm:w-auto flex items-center justify-center gap-2">
+                        <a href="https://x.com/i/communities/2012058032772170029" className="group relative px-8 py-3 md:px-10 md:py-4 bg-azure-accent text-white font-display font-bold text-base md:text-lg tracking-widest overflow-hidden skew-x-[-10deg] hover:bg-red-700 transition-colors shadow-[0_0_20px_rgba(220,38,38,0.4)] w-full sm:w-auto flex items-center justify-center gap-2">
                             <span className="relative z-10 skew-x-[10deg] flex items-center gap-2">
                                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path></svg>
-                                TWITTER
                             </span>
                             <div className="absolute inset-0 w-full h-full bg-white/20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-in-out"></div>
                         </a>
@@ -133,7 +132,6 @@ const HeroSection = () => {
                         <a href="#" className="px-8 py-3 md:px-10 md:py-4 border-2 border-white/10 text-white font-display font-bold text-base md:text-lg tracking-widest skew-x-[-10deg] hover:border-azure-accent hover:text-azure-accent transition-colors backdrop-blur-sm w-full sm:w-auto flex items-center justify-center gap-2">
                             <span className="skew-x-[10deg] flex items-center gap-2">
                                 <img src={dexImg} alt="Dexscreener" className="w-6 h-6" />
-                                PUMPFUN
                             </span>
                         </a>
                     </div>
