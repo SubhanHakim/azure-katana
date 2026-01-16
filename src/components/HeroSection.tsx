@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import heroImg from '../assets/azure_katana_char.jpg';
+import dexImg from '../assets/dexscreener.svg';
 import gsap from 'gsap';
 
 const HeroSection = () => {
@@ -13,7 +14,7 @@ const HeroSection = () => {
 
         // 1. Initial States
         gsap.set((textRef.current as any)?.children || [], { autoAlpha: 0, y: 100, skewY: 10 });
-        gsap.set(imgWrapperRef.current, { autoAlpha: 0, scale: 1.2, x: 100 });
+        gsap.set(imgWrapperRef.current, { autoAlpha: 0, scale: 0.9, x: 50 }); // Adjusted for new frame style
         gsap.set(bgTextRef.current, { autoAlpha: 0, scale: 0.8 });
 
         // 2. Entrance Animation
@@ -26,10 +27,9 @@ const HeroSection = () => {
             .to(imgWrapperRef.current, {
                 duration: 1.2,
                 autoAlpha: 1,
-                scale: 1,
+                scale: 1, // Full size
                 x: 0,
-                ease: "circ.out",
-                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" // Full reveal
+                ease: "power3.out"
             }, "-=1")
             .to((textRef.current as any)?.children || [], {
                 duration: 1,
@@ -97,7 +97,7 @@ const HeroSection = () => {
             <div className="container mx-auto px-8 md:px-16 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center h-full">
 
                 {/* Left: Aggressive Typography */}
-                <div ref={textRef} className="space-y-8 order-2 md:order-1 relative z-20">
+                <div ref={textRef} className="space-y-6 md:space-y-8 order-2 md:order-1 relative z-20 pb-12 md:pb-0">
                     <div className="flex items-center space-x-4">
                         <div className="h-1 w-16 bg-gradient-to-r from-azure-accent to-transparent"></div>
                         <span className="text-azure-accent font-display tracking-[0.3em] text-sm font-bold uppercase drop-shadow-[0_0_10px_rgba(220,38,38,0.5)]">
@@ -122,41 +122,55 @@ const HeroSection = () => {
                     </p>
 
                     <div className="pt-4 flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
-                        <button className="group relative px-8 py-3 md:px-10 md:py-4 bg-azure-accent text-white font-display font-bold text-base md:text-lg tracking-widest overflow-hidden skew-x-[-10deg] hover:bg-red-700 transition-colors shadow-[0_0_20px_rgba(220,38,38,0.4)] w-full sm:w-auto">
-                            <span className="relative z-10 skew-x-[10deg] inline-block">INITIATE</span>
+                        <a href="#" className="group relative px-8 py-3 md:px-10 md:py-4 bg-azure-accent text-white font-display font-bold text-base md:text-lg tracking-widest overflow-hidden skew-x-[-10deg] hover:bg-red-700 transition-colors shadow-[0_0_20px_rgba(220,38,38,0.4)] w-full sm:w-auto flex items-center justify-center gap-2">
+                            <span className="relative z-10 skew-x-[10deg] flex items-center gap-2">
+                                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path></svg>
+                                TWITTER
+                            </span>
                             <div className="absolute inset-0 w-full h-full bg-white/20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-in-out"></div>
-                        </button>
+                        </a>
 
-                        <button className="px-8 py-3 md:px-10 md:py-4 border-2 border-white/10 text-white font-display font-bold text-base md:text-lg tracking-widest skew-x-[-10deg] hover:border-azure-accent hover:text-azure-accent transition-colors backdrop-blur-sm w-full sm:w-auto">
-                            <span className="skew-x-[10deg] inline-block">MANIFESTO</span>
-                        </button>
+                        <a href="#" className="px-8 py-3 md:px-10 md:py-4 border-2 border-white/10 text-white font-display font-bold text-base md:text-lg tracking-widest skew-x-[-10deg] hover:border-azure-accent hover:text-azure-accent transition-colors backdrop-blur-sm w-full sm:w-auto flex items-center justify-center gap-2">
+                            <span className="skew-x-[10deg] flex items-center gap-2">
+                                <img src={dexImg} alt="Dexscreener" className="w-6 h-6" />
+                                PUMPFUN
+                            </span>
+                        </a>
                     </div>
                 </div>
 
-                {/* Right: Dramatic Character Container */}
-                <div className="relative order-1 md:order-2 h-[50vh] md:h-[80vh] flex justify-center items-center">
+                {/* Right: Dramatic Character Container (Refactored to match AboutSection style) */}
+                <div className="relative order-1 md:order-2 w-full md:h-[80vh] flex justify-center items-center mt-8 md:mt-0 mb-8 md:mb-0">
 
                     {/* Glowing Backlight */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-azure-accent/20 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-azure-accent/20 rounded-full blur-[80px] md:blur-[120px] pointer-events-none animate-pulse"></div>
 
-                    {/* The Image Wrapper with a 'Slash' Clip */}
+                    {/* The Image Wrapper with Tech Frame */}
                     <div
                         ref={imgWrapperRef}
-                        className="relative w-full h-full flex justify-center items-center drop-shadow-2xl"
+                        className="relative w-full max-w-lg mx-auto"
                     >
-                        <div className="relative w-full h-full md:scale-125 origin-center">
+                        {/* Frame Container */}
+                        <div className="relative z-10 p-4 border border-white/10 bg-white/5 backdrop-blur-sm">
+                            {/* Corner Details */}
+                            <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-azure-accent"></div>
+                            <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-azure-accent"></div>
+
                             <img
                                 src={heroImg}
                                 alt="Azure Katana"
-                                className="w-full h-full object-cover object-top mask-image-gradient"
+                                className="w-full h-auto object-cover object-top mask-image-gradient shadow-2xl"
                                 style={{
                                     filter: "contrast(1.1) saturate(1.1)",
                                 }}
                             />
 
-                            {/* Overlay Gradient to blend bottom */}
-                            <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#020617] to-transparent"></div>
+                            {/* Scanning Line Animation */}
+                            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-azure-accent/10 to-transparent h-[10%] w-full animate-scan pointer-events-none opacity-50"></div>
                         </div>
+
+                        {/* Backing Block */}
+                        <div className="absolute top-6 left-6 w-full h-full border-2 border-white/5 z-0"></div>
                     </div>
                 </div>
             </div>
